@@ -5,7 +5,7 @@
          FinM
         </a>
 
-        <ul class="nav col-12 col-lg-10 me-lg-auto m-lg-2 mb-2 justify-content-center mb-md-0">
+        <ul class="nav col-12 col-lg-9 me-lg-auto m-lg-2 mb-2 justify-content-center mb-md-0">
           <li class="nav-link px-2 link-dark">
             <div class="dropdown text-end">
               <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,19 +45,31 @@
         <%# <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
           <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
         </form> %>
-
-        <div class="dropdown text-end">
-          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-          </a>
-          <ul class="dropdown-menu text-small">
-            <li><a class="dropdown-item" href="#">New project...</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
-          </ul>
-        </div>
+        <%- if user_signed_in? %>
+          <div class="dropdown text-end">
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu text-small">
+              <li><a class="dropdown-item" href="#">New project...</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><%= link_to 'Profile', edit_user_registration_path, class: 'dropdown-item' %></li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                 <%= button_to 'Logout', destroy_user_session_path, method: :delete, dorm: {turbolink: false}, class:'dropdown-item' %>
+              </li>
+            </ul>
+          </div>
+        <% else %>
+          <div class='text-end me-lg-auto'>
+              <%= link_to new_user_session_path do %>
+                <button type='button' class='btn btn-outline-dark me-2'>Login</button>
+              <% end %>
+              <%= link_to new_user_registration_path do %>
+                <button type='button' class='btn btn-warning'>Sing-up</button>
+              <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </header>

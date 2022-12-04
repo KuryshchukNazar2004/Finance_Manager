@@ -18,6 +18,11 @@ gem 'jquery-rails'
 #html
 gem 'bootstrap', '~> 5.2.3'
 
+#auth
+gem 'devise'
+#locale
+gem 'devise-i18n'
+
 gem "stimulus-rails"
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
