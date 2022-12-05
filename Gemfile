@@ -17,11 +17,17 @@ gem 'jquery-rails'
 
 #html
 gem 'bootstrap', '~> 5.2.3'
+gem 'bootstrap-sass'
 
 #auth
 gem 'devise'
+
+# features
+gem 'image_processing'
+
 #locale
 gem 'devise-i18n'
+gem 'devise-bootstrap-views', '~> 1.0'
 
 gem "stimulus-rails"
 gem "jbuilder"

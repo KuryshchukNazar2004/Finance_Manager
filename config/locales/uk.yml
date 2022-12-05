@@ -1,0 +1,13 @@
+uk:
+    header:
+      menu:
+        Expenses/revenues: Витрати/Доходи
+        Edd/Edit: Реєстрація/Редагування
+        Transaction: Транзакції
+        Add/Edit Operation: Додати/Редагувати Операцію
+        Report Generator: Згенеруванти Звіт
+        Report of expenses/revenues for some period grouped by categories: Звіт за певний період
+        Day-by-Day Report of expenses/revenues: Розподіл витрат за період(по датам)
+
+    welcome:
+      title:FinM Менеджер

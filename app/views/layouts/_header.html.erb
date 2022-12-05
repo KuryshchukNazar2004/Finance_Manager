@@ -1,32 +1,18 @@
 <header class="p-3 mb-3 border-bottom">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-         FinM
-        </a>
+        <%= link_to root_path do %>
+          <%= image_tag('FINM.png', width: '100px') %>
+        <% end %>
+
 
         <ul class="nav col-12 col-lg-9 me-lg-auto m-lg-2 mb-2 justify-content-center mb-md-0">
           <li class="nav-link px-2 link-dark">
-            <div class="dropdown text-end">
-              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                Categories
-              </a>
-              <ul class="dropdown-menu text-small">
-                <li><a class="dropdown-item" href="#">Expenses/revenues</a></li>
-                <li><a class="dropdown-item" href="#">Edd/Edit</a></li>
-              </ul>
-            </div>
+              <a class="dropdown-item" href="/expenses"><%=t('header.menu.Expenses/Revenues') %></a>
           </li>
           <li class="nav-link px-2 link-dark">
-            <div class="dropdown text-end">
-              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                Operation
-              </a>
-              <ul class="dropdown-menu text-small">
-                <li><a class="dropdown-item" href="#">Transaction</a></li>
-                <li><a class="dropdown-item" href="#">Add/Edit Operation</a></li>
-              </ul>
-            </div>
+            <a class="dropdown-item" href="/transaction"><%= t('header.menu.Transaction') %></a>
+                <%# <li><a class="dropdown-item" href="/addTransact"><%= t('header.menu.Add/Edit Operation')</a></li> %> 
           </li>
           <li class="nav-link px-2 link-dark">
             <div class="dropdown text-end">
@@ -34,9 +20,9 @@
                 Report
               </a>
               <ul class="dropdown-menu text-small">
-                <li><a class="dropdown-item" href="#">Report Generator </a></li>
-                <li><a class="dropdown-item" href="#">Report of expenses/revenues for some period grouped by categories</a></li>
-                <li><a class="dropdown-item" href="#">Day-by-Day Report of expenses/revenues </a></li>
+                <li><a class="dropdown-item" href="/report"><%= t('header.menu.Report Generator') %></a></li>
+                <li><a class="dropdown-item" href="/reportDiagram"><%= t('header.menu.Report of expenses/revenues for some period grouped by categories') %></a></li>
+                <li><a class="dropdown-item" href="/reportbigDiagram"><%= t('header.menu.Day-by-Day Report of expenses/revenues') %> </a></li>
               </ul>
             </div>
           </li>
@@ -51,8 +37,8 @@
               <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
             </a>
             <ul class="dropdown-menu text-small">
-              <li><a class="dropdown-item" href="#">New project...</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><%= link_to 'New Costs', new_category_path, class: 'dropdown-item' %></li>
+              <li><%= link_to 'New Transaction', new_category_path, class: 'dropdown-item' %></li>
               <li><%= link_to 'Profile', edit_user_registration_path, class: 'dropdown-item' %></li>
               <li><hr class="dropdown-divider"></li>
               <li>
@@ -70,6 +56,9 @@
               <% end %>
           </div>
         <% end %>
+        
       </div>
+      
     </div>
   </header>
+  
