@@ -12,20 +12,20 @@
   <% end %>
 
   <div>
-    <%= form.label :'Транзакція', style: "display: block" %>
+    <%= form.label :'Транзакція*', style: "display: block" %>
     <%= form.text_field :transact %>
   </div>
   <div>
-    <%= form.label :'Тип операції', style: "display: block" %>
+    <%= form.label :'Тип операції*', style: "display: block" %>
     <%= form.text_field :typeoperat %>
   </div>
   <div>
-    <%= form.label :'Сума', style: "display: block" %>
-    <%= form.text_field :sum %>
+    <%= form.label :'Сума*', style: "display: block" %>
+    <%= form.number_field :sum %>
   </div>
   <div>
-    <%= form.label :'Дата', style: "display: block" %>
-    <%= form.text_field :date %>
+    <%= form.label :'Дата*', style: "display: block" %>
+    <%= form.date_field :date %>
   </div>
   <div>
     <%= form.label :'Опис', style: "display: block" %>
