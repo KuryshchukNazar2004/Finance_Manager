@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :transactions
   resources :categories
   # resources :articles
   devise_for :users
@@ -9,9 +10,7 @@ Rails.application.routes.draw do
 
   # get 'about', to: 'welcome#about'
   get 'expenses', to: 'categories#index'
-  get 'addExp', to: 'categories#index'
-  get 'transaction', to: 'categories#index'
-  get 'addTransact', to: 'categories#index'
+  get 'transaction', to: 'transactions#index'
   get 'report', to: 'categories#index'
   get 'reportDiagram', to: 'categories#index'
   get 'reportbigDiagram', to: 'categories#index'

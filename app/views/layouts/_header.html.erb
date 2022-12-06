@@ -1,18 +1,33 @@
 <header class="p-3 mb-3 border-bottom">
     <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-between">
         <%= link_to root_path do %>
           <%= image_tag('FINM.png', width: '100px') %>
         <% end %>
 
-
+        <%- if user_signed_in? %>
         <ul class="nav col-12 col-lg-9 me-lg-auto m-lg-2 mb-2 justify-content-center mb-md-0">
           <li class="nav-link px-2 link-dark">
-              <a class="dropdown-item" href="/expenses"><%=t('header.menu.Expenses/Revenues') %></a>
+            <div class="dropdown text-end">
+                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Category
+                </a>
+                <ul class="dropdown-menu text-small">
+                  <li><a class="dropdown-item" href="/expenses">Expenses/Revenues</a></li>
+                  <li><%= link_to 'New Costs', new_category_path, class: 'dropdown-item' %></li>
+                </ul>
+            </div>
           </li>
           <li class="nav-link px-2 link-dark">
-            <a class="dropdown-item" href="/transaction"><%= t('header.menu.Transaction') %></a>
-                <%# <li><a class="dropdown-item" href="/addTransact"><%= t('header.menu.Add/Edit Operation')</a></li> %> 
+            <div class="dropdown text-end">
+              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Operation
+              </a>
+              <ul class="dropdown-menu text-small">
+                <li><a class="dropdown-item" href="/transaction">Transaction</a></li>
+                <li><%= link_to 'New Transaction', new_transaction_path, class: 'dropdown-item' %></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-link px-2 link-dark">
             <div class="dropdown text-end">
@@ -20,25 +35,20 @@
                 Report
               </a>
               <ul class="dropdown-menu text-small">
-                <li><a class="dropdown-item" href="/report"><%= t('header.menu.Report Generator') %></a></li>
-                <li><a class="dropdown-item" href="/reportDiagram"><%= t('header.menu.Report of expenses/revenues for some period grouped by categories') %></a></li>
-                <li><a class="dropdown-item" href="/reportbigDiagram"><%= t('header.menu.Day-by-Day Report of expenses/revenues') %> </a></li>
+                <li><a class="dropdown-item" href="/report">Report Generator</a></li>
+                <li><a class="dropdown-item" href="/reportDiagram">Report of expenses/revenues for some period grouped by categories</a></li>
+                <li><a class="dropdown-item" href="/reportbigDiagram">Day-by-Day Report of expenses/revenues</a></li>
               </ul>
             </div>
           </li>
         </ul>
-
-        <%# <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-        </form> %>
-        <%- if user_signed_in? %>
           <div class="dropdown text-end">
             <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+              <img src="https://cdn2.iconfinder.com/data/icons/users-6/100/USER9-512.png" alt="mdo" width="32" height="32" class="rounded-circle">
             </a>
             <ul class="dropdown-menu text-small">
               <li><%= link_to 'New Costs', new_category_path, class: 'dropdown-item' %></li>
-              <li><%= link_to 'New Transaction', new_category_path, class: 'dropdown-item' %></li>
+              <li><%= link_to 'New Transaction', new_transaction_path, class: 'dropdown-item' %></li>
               <li><%= link_to 'Profile', edit_user_registration_path, class: 'dropdown-item' %></li>
               <li><hr class="dropdown-divider"></li>
               <li>
@@ -47,7 +57,7 @@
             </ul>
           </div>
         <% else %>
-          <div class='text-end me-lg-auto'>
+          <div class="d-flex justify-content-lg-end">
               <%= link_to new_user_session_path do %>
                 <button type='button' class='btn btn-outline-dark me-2'>Login</button>
               <% end %>
