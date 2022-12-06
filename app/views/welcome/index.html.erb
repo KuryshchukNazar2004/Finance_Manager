@@ -1,11 +1,42 @@
 <body>
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">FinM Manager</h1>
-        <p class="lead text-muted">This site was created to track personal expenses and transactions.</p>
-        <h3 class="fw-light">To start tracking your spending and transactions, you need to register</h3>
+  <main class="container">
+  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">Your Finance Manager</h1>
+      <p class="lead my-3">This is your personal financial manager. We are the FinM company and we will help you control your expenses.</p>
+      <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Costs</strong>
+          <h3 class="mb-0">Examples</h3>
+          <div class="mb-1 text-muted"><%= Date.today.year %></div>
+          <p class="card-text mb-auto">This example will show you how conveniently and correctly you can record your expenses.</p>
+          <h3 class="text-primary">Register in a few clicks</h3>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <%= image_tag('Costs.jpg',width:'300px') %>
+        </div>
       </div>
     </div>
-  </section>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Transaction</strong>
+          <h3 class="mb-0">Examples</h3>
+          <div class="mb-1 text-muted"><%= Date.today.year %></div>
+          <p class="mb-auto">This example will show you how conveniently and correctly you can record your transactions.</p>
+          <h3 class="text-success">Register in a few clicks</h3>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <%= image_tag('transactions.jpg', width:'300px') %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
 </body>
