@@ -22,6 +22,8 @@ gem 'bootstrap-sass'
 #auth
 gem 'devise'
 
+
+gem 'faker'
 # features
 gem 'image_processing'
 
