@@ -11,7 +11,4 @@ Rails.application.routes.draw do
   # get 'about', to: 'welcome#about'
   get 'expenses', to: 'categories#index'
   get 'transaction', to: 'transactions#index'
-  get 'report', to: 'categories#index'
-  get 'reportDiagram', to: 'categories#index'
-  get 'reportbigDiagram', to: 'categories#index'
 end

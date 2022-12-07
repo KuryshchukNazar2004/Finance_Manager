@@ -1,5 +1,5 @@
 class Expense < ApplicationRecord
-    self.inheritanse_column = nil
+    # self.inheritanse_column = nil
 
-    enum type[:purchase, :payment, :transfer]
+    # enum type[:typeoperat, :date, :sum, :desc]
 end

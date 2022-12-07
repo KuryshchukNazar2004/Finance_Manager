@@ -24,6 +24,9 @@ gem 'devise'
 
 
 gem 'faker'
+
+gem 'chartkick'
+gem 'groupdate'
 # features
 gem 'image_processing'
 
