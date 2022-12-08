@@ -1,9 +1,10 @@
 <main>
   <div class="album py-5 bg-light">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id ='categories'>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id ='transactions'>
       <% @transactions.each do |transaction| %>
           <%= render 'index_transaction', transaction:transaction %>
       <% end %>
     </div>
+    <%= line_chart Transaction.group_by_day(:created_at).sum(:sum)%>
   </div>
 </main>
