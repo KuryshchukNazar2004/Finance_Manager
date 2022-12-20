@@ -1,14 +1,14 @@
-<header class="p-3 mb-3 border-bottom">
+<header class="p-3 mb-3 border-bottom bg-dark">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-between">
         <%= link_to root_path do %>
           <%= image_tag('FINM.png', width: '100px') %>
         <% end %>
         <%- if user_signed_in?  %>
-        <ul class="nav col-12 col-lg-9 me-lg-auto m-lg-2 mb-2 justify-content-center mb-md-0">
-          <li class="nav-link px-2 link-dark">
+        <ul class="nav col-12 col-lg-9 me-lg-auto m-lg-2 mb-2 justify-content-center mb-md-0  text-white">
+          <li class="nav-link px-2 ">
             <div class="dropdown text-end">
-                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <a href="#" class="d-block  text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                   Category
                 </a>
                 <ul class="dropdown-menu text-small">
@@ -17,9 +17,9 @@
                 </ul>
             </div>
           </li>
-          <li class="nav-link px-2 link-dark">
+          <li class="nav-link px-2">
             <div class="dropdown text-end">
-              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <a href="#" class="d-block  text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 Operation
               </a>
               <ul class="dropdown-menu text-small">
@@ -30,8 +30,8 @@
           </li>
         </ul>
           <div class="dropdown text-end">
-            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://cdn2.iconfinder.com/data/icons/users-6/100/USER9-512.png" alt="mdo" width="32" height="32" class="rounded-circle">
+            <a href="#" class="d-block link-light text-decoration-none dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://th.bing.com/th/id/R.5e9f03c04636028dcf00899f52832c0d?rik=hzubvjxQoG%2bruQ&pid=ImgRaw&r=0" alt="mdo" width="32" height="32" class="rounded-circle">
             </a>
             <ul class="dropdown-menu text-small">
               <li><%= link_to 'New Costs', new_category_path, class: 'dropdown-item' %></li>

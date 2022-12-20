@@ -1,41 +1,10 @@
 <div id="<%= dom_id transaction %>">
-  <h1 class="text-center"><%= transaction.transact %></h1>
-  <%- if transaction.desc.present? %>
-    <table class='text-center col-12 col-lg-12 me-lg-auto m-lg-2 mb-2 justify-content-center mb-md-0' style='border:1px solid black; text-align:center;'>
-      <thead style='border:1px solid black; padding:10px'>
-        <tr style='text-align:center'>
-          <th style='border:1px solid black;'>Операція</th>
-          <th style='border:1px solid black;'>Сума</th>
-          <th style='border:1px solid black;'>Дата</th>
-          <th style='border:1px solid black;'>Опис</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style='text-align:center;'>
-          <td style='border:1px solid black;'><%= transaction.typeoperat %></th>
-          <td style='border:1px solid black;'><%= transaction.sum %></td>
-          <td style='border:1px solid black;'><%= transaction.date %></td>
-          <td style='border:1px solid black;'><%= transaction.desc %></td>
-        </tr>
-      </tbody>
-    </table>
-  <% else %>
-    <table class='text-center col-12 col-lg-12 me-lg-auto m-lg-2 mb-2 justify-content-center mb-md-0' style='border:1px solid black; text-align:center;'>
-      <thead style='border:1px solid black; padding:10px'>
-        <tr style='text-align:center'>
-          <th style='border:1px solid black;'>Операція</th>
-          <th style='border:1px solid black;'>Сума</th>
-          <th style='border:1px solid black;'>Дата</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style='text-align:center;'>
-          <td style='border:1px solid black;'><%= transaction.typeoperat %></th>
-          <td style='border:1px solid black;'><%= transaction.sum %></td>
-          <td style='border:1px solid black;'><%= transaction.date %></td>
-        </tr>
-      </tbody>
-    </table>
-  <% end %>
+    <td>
+    <%= transaction.sum %>
+  </td>
+
+  <td>
+    <%= transaction.desc %>
+  </td>
 </div>
 

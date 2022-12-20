@@ -1,9 +1,19 @@
 <main>
-  <div class="album py-5 bg-light">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id ='transactions'>
+  <div >
+    <div  id ='transactions'>
+    <table class="col-12">
+        <thead style='border:1px solid black; padding:10px'>
+          <tr style='text-align:center'>
+          <th style='border:1px solid black;'>Назва</th>
+          <th style='border:1px solid black;'>Операція</th>
+          <th style='border:1px solid black;'>Сума</th>
+          <th style='border:1px solid black;'>Дата</th>
+          <th style='border:1px solid black;'>Опис</th>
+        </thead>
       <% @transactions.each do |transaction| %>
           <%= render 'index_transaction', transaction:transaction %>
       <% end %>
+    </table>
     </div>
     <%= line_chart Transaction.group_by_day(:created_at).sum(:sum)%>
   </div>

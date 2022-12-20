@@ -1,63 +1,21 @@
-<div class="col" id="<%= dom_id transaction %>">
-  <div class="card shadow-sm">
-      <div class="card-body">
-        <p class="card-text" style='font-weight: bold;' ><%= transaction.transact%></p>
-        <%- if transaction.desc.present? %>
-          <table class='text-center col-12 col-lg-12 justify-content-center mb-md-3' style='border:1px solid black; text-align:center;'>
-            <thead style='border:1px solid black; padding:10px'>
-              <tr style='text-align:center'>
-                <th style='border:1px solid black;'>Операція</th>
-                <th style='border:1px solid black;'>Сума</th>
-                <th style='border:1px solid black;'>Дата</th>
-                <th style='border:1px solid black;'>Опис</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr style='text-align:center;'>
-                <td style='border:1px solid black;'><%= transaction.typeoperat %></th>
-                <td style='border:1px solid black;'><%= transaction.sum %></td>
-                <td style='border:1px solid black;'><%= transaction.date %></td>
-                <td style='border:1px solid black;'><%= transaction.desc %></td>
-                
-              </tr>
-            </tbody>
-          </table>
-          <% else %>
-            <table class='text-center col-12 col-lg-12 justify-content-center mb-md-3' style='border:1px solid black; text-align:center;'>
-              <thead style='border:1px solid black; padding:10px'>
-                <tr style='text-align:center'>
-                  <th style='border:1px solid black;'>Операція</th>
-                  <th style='border:1px solid black;'>Сума</th>
-                  <th style='border:1px solid black;'>Дата</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr style='text-align:center;'>
-                  <td style='border:1px solid black;'><%= transaction.typeoperat %></th>
-                  <td style='border:1px solid black;'><%= transaction.sum %></td>
-                  <td style='border:1px solid black;'><%= transaction.date %></td>           
-                </tr>
-              </tbody>
-            </table>
+<div class="col-12" id="<%= dom_id transaction %>">
+  <tbody class="col-12">
+    <tr style='text-align:center;'>
+      <td style='border:1px solid black;'><%= transaction.transact%></th>
+      <td style='border:1px solid black;'><%= transaction.typeoperat %></th>
+      <td style='border:1px solid black;'><%= transaction.sum %></td>
+      <td style='border:1px solid black;'><%= transaction.date %></td>
+      <td style='border:1px solid black;'><%= transaction.desc %></td>
+      <td style='border:1px solid black;'>
+        <div class="btn-group">
+          <%= link_to transaction do %>
+            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
           <% end %>
-          
-
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-                <%= link_to transaction do %>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                <% end %>
-                <%= link_to edit_transaction_path(transaction) do %>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                <% end %>   
-            </div>
-            <small class="text-muted"><%= Time.now %></small>
-          </div>
+          <%= link_to edit_transaction_path(transaction) do %>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+          <% end %>   
         </div>
+      </td>
+  </tbody>
+</div>
 
-      </div>
-      
-  </div>
-  
