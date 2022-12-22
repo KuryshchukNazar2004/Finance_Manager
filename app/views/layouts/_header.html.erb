@@ -28,6 +28,11 @@
               </ul>
             </div>
           </li>
+          <li class="nav-link px-2">
+            <div class="dropdown text-end">
+              <a href="/report" class="d-block text-white text-decoration-none">Reports</a>
+            </div>
+          </li>
         </ul>
           <div class="dropdown text-end">
             <a href="#" class="d-block link-light text-decoration-none dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,16 +51,14 @@
         <% else %>
           <div class="d-flex justify-content-lg-end">
               <%= link_to new_user_session_path do %>
-                <button type='button' class='btn btn-outline-dark me-2'>Login</button>
+                <button type='button' class='btn btn-outline-light me-2'>Login</button>
               <% end %>
               <%= link_to new_user_registration_path do %>
                 <button type='button' class='btn btn-warning'>Sing-up</button>
               <% end %>
           </div>
         <% end %>
-        
       </div>
-      
     </div>
   </header>
   

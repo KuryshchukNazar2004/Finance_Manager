@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   # get 'about', to: 'welcome#about'
   get 'expenses', to: 'categories#index'
   get 'transaction', to: 'transactions#index'
+  get 'report', to: 'transactions#reports'
 end

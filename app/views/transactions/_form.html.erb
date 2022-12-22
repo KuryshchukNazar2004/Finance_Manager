@@ -17,7 +17,8 @@
   </div>
   <div>
     <%= form.label :'Тип операції*', style: "display: block" %>
-    <%= form.text_field :typeoperat %>
+    <%= select_tag(:typeoperat, options_for_select([['Витрати', 1], ['Дохід', 2]]))%>
+         
   </div>
   <div>
     <%= form.label :'Сума*', style: "display: block" %>
