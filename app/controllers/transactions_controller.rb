@@ -14,7 +14,9 @@ class TransactionsController < ApplicationController
   def new
     @transaction = Transaction.new
   end
-
+  def report
+    @reports = Transaction.all
+  end
   # GET /transactions/1/edit
   def edit
   end

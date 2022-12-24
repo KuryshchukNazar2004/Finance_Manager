@@ -1,3 +1,0 @@
-class Finmanagers < ApplicationController
-    
-end

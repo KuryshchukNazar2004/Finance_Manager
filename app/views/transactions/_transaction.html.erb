@@ -1,10 +1,19 @@
 <div id="<%= dom_id transaction %>">
-    <td>
-    <%= transaction.sum %>
-  </td>
-
-  <td>
-    <%= transaction.desc %>
-  </td>
+  <table class="col-12">
+        <thead style='border:1px solid black; padding:10px'>
+          <tr style='text-align:center'>
+          <th style='border:1px solid black;'>Назва</th>
+          <th style='border:1px solid black;'>Сума</th>
+          <th style='border:1px solid black;'>Дата</th>
+          <th style='border:1px solid black;'>Опис</th>
+        </thead>
+      <tbody class="col-12">
+        <tr style='text-align:center;'>
+          <td style='border:1px solid black;'><%= transaction.transact%></th>
+          <td style='border:1px solid black;'><%= transaction.sum %></td>
+          <td style='border:1px solid black;'><%= transaction.date %></td>
+          <td style='border:1px solid black;'><%= transaction.desc %></td>
+      </tbody>
+    </table>
 </div>
 

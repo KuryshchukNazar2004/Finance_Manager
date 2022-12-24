@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   # get 'about', to: 'welcome#about'
   get 'expenses', to: 'categories#index'
   get 'transaction', to: 'transactions#index'
-  get 'report', to: 'transactions#reports'
+  get 'report_form', to: 'transactions#_form_reports'
+  get 'report', to: 'transactions#report_view'
 end
