@@ -12,7 +12,7 @@
                   Category
                 </a>
                 <ul class="dropdown-menu text-small">
-                  <li><a class="dropdown-item" href="/expenses">Expenses/Revenues</a></li>
+                  <li><%= link_to "Expenses/Revenues", "/expenses", class: 'dropdown-item'%>
                   <li><%= link_to 'New Costs', new_category_path, class: 'dropdown-item' %></li>
                 </ul>
             </div>
@@ -23,7 +23,7 @@
                 Operation
               </a>
               <ul class="dropdown-menu text-small">
-                <li><a class="dropdown-item" href="/transaction">Transaction</a></li>
+                <li><li><%= link_to "Transaction", "/transaction", class: 'dropdown-item'%></li>
                 <li><%= link_to 'New Transaction', new_transaction_path, class: 'dropdown-item' %></li>
               </ul>
             </div>
